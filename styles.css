@@ -16,103 +16,226 @@
   font-size: 62.5%;
 }
 
-@media only screen and (max-width: 576px) {
+/* Extra Small Device */
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 1.6rem;
+  color: white;
+  background-color: var(--red);
+  background-image: var(--mobile-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 94%;
+}
+
+header {
+  margin: 7.5rem auto;
+  position: relative;
+  max-width: 90%;
+}
+
+header #title {
+  line-height: 1.3;
+}
+
+header #description {
+  max-width: 85%;
+  margin: 0 auto;
+  line-height: 1.75;
+  color: rgb(240, 240, 240);
+}
+
+main #try {
+  position: relative;
+  margin: 0 2rem 2.5rem 2rem;
+  padding: 1.5rem 0;
+  background-color: var(--blue);
+  border-radius: 0.8rem;
+  box-shadow: 0px 5px 0px 0px rgb(78, 69, 143);
+}
+
+section#try p {
+  width: 20rem;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+section#try p span {
+  font-weight: 600;
+}
+
+#claim-form {
+  position: relative;
+  margin: 0 2rem 7.5rem 2rem;
+  padding: 2rem 2.5rem;
+  background-color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 7px 0 0 rgba(121, 121, 121, 0.3);
+}
+
+input {
+  display: block;
+  max-width: 46.5rem;
+  width: 93%;
+  margin-bottom: 2rem;
+  padding: 2rem 0 2rem 1.5rem;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  resize: vertical;
+}
+
+button[type=submit] {
+  width: 100%;
+  margin-left: -1.5px;
+  padding: 2rem 1.5rem;
+  background-color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.2rem;
+  box-shadow: 0 5px 0 0 rgb(39, 163, 107);
+}
+
+#claim-form p {
+  max-width: 95%;
+  margin: 1.5rem auto;
+  color: rgb(206, 206, 206);
+  font-size: small;
+  font-weight: 400;
+}
+
+#claim-form p span {
+  color: var(--red);
+  font-weight: 600;
+}
+
+/* Small Device*/
+@media only screen and (min-width: 576px) {
   body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 1.6rem;
-    color: white;
-    background-color: var(--red);
-    background-image: var(--mobile-bg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  header {
-    margin: 7.5rem 0;
-    position: relative;
-  }
-
-  header #title {
-    line-height: 1.3;
-  }
-
-  header #description {
-    max-width: 85%;
-    margin: 0 auto;
-    line-height: 1.75;
-    color: rgb(240, 240, 240);
-  }
-
-  main #try {
-    position: relative;
-    max-width: 90%;
-    margin: 0 auto;
-    margin-bottom: 2.5rem;
-    padding: 1.5rem 0;
-    background-color: var(--blue);
-    border-radius: 0.8rem;
-    box-shadow: 0px 5px 0px 0px rgb(78, 69, 143);
-  }
-
-  section p {
-    width: 20rem;
-    margin: 0 auto;
-  }
-
-  section p span {
-    font-weight: 600;
-  }
-
-  #claim-form {
-    position: relative;
-    margin: 0 2rem;
-    margin-bottom: 7.5rem;
-    padding: 2rem 2.5rem;
-    background-color: white;
-    border-radius: 0.8rem;
-    box-shadow: 0 7px 0 0 rgba(121, 121, 121, 0.3);
+    background-image: var(--desktop-bg);
+    max-width: 540px;
   }
 
   input {
-    display: block;
-    max-width: 46.5rem;
-    width: 93%;
-    margin-bottom: 2rem;
-    padding: 2rem 0 2rem 1.5rem;
-    border: 1px solid rgb(209, 209, 209);
-    border-radius: 0.8rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    resize: vertical;
+    padding: 2rem 1.1rem 2rem 1.5rem;
+  }
+}
+
+/* Medium Device*/
+@media only screen and (min-width: 768px) {
+  body {
+    max-width: 720px;
+    background-image: var(--desktop-bg);
   }
 
-  button[type=submit] {
+  main {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  input {
+    padding: 2rem 1.1rem 2rem 1.5rem;
+  }
+}
+
+/* Large Device*/
+@media only screen and (min-width: 992px) {
+  body {
+    max-width: 960px;
+    background-image: var(--desktop-bg);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header {
+    max-width: 420px;
+    margin: auto;
+    text-align: left;
+  }
+
+  header #title {
+    font-size: 4rem;
+  }
+
+  header #description {
+    max-width: 95%;
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+
+  main {
+    max-width: 540px;
+    margin: 7.5rem 0 7.5rem auto;
+  }
+
+  section#try p {
     width: 100%;
-    margin-left: -1.5px;
-    padding: 2rem 1.5rem;
-    background-color: var(--green);
-    border: 1px solid var(--green);
-    border-radius: 0.8rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: white;
-    letter-spacing: 0.2rem;
-    box-shadow: 0 5px 0 0 rgb(39, 163, 107);
+  }
+
+  input {
+    padding: 2rem 1.1rem 2rem 1.5rem;
+  }
+}
+
+/* Extra Large Device*/
+@media only screen and (min-width: 1200px) {
+  body {
+    max-width: 1140px;
+    background-image: var(--desktop-bg);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header {
+    max-width: 530px;
+    margin: auto;
+    text-align: left;
+  }
+
+  header #title {
+    font-size: 4rem;
+  }
+
+  header #description {
+    max-width: 95%;
+    margin: 0 auto 0 0;
+    text-align: left;
+  }
+
+  main {
+    max-width: 540px;
+    margin: 7.5rem 0 7.5rem 0;
+  }
+
+  main #try {
+    margin: 0 2rem 2.5rem 0;
+  }
+
+  section#try p {
+    width: 100%;
+  }
+
+  #claim-form {
+    margin: 0 2rem 0 0;
+  }
+
+  input {
+    padding: 2rem 1.1rem 2rem 1.5rem;
   }
 
   #claim-form p {
-    max-width: 95%;
-    margin: 1.5rem auto;
-    color: rgb(206, 206, 206);
-    font-size: small;
-    font-weight: 400;
-  }
-
-  #claim-form p span {
-    color: var(--red);
-    font-weight: 600;
+    max-width: 100%;
+    margin: 1.5rem 0;
+    padding: 0 2rem;
   }
 }
