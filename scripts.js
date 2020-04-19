@@ -1,6 +1,15 @@
 const btnSubmit = document.querySelector("button[type='submit']");
 const inputs = document.querySelectorAll("input");
-const form = document.querySelector("#claim-form");
+const errors = document.querySelectorAll(".error");
+const dangerFirstname = document.querySelector("#danger-firstname");
+const dangerLastname = document.querySelector("#danger-lastname");
+const dangerEmail = document.querySelector("#danger-email");
+const dangerPassword = document.querySelector("#danger-password");
+
+function validateEmail(_email) {
+  const RE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return RE.test
+}
 
 btnSubmit.addEventListener("click", (e) => {
   // Input element
@@ -8,17 +17,47 @@ btnSubmit.addEventListener("click", (e) => {
   const lastname = inputs[1];
   const email = inputs[2];
   const password = inputs[3];
-  
-  // Node and text
-  const node = document.createElement("p");
-  const warningFirstname = document.createTextNode("First Name cannot be empty");
-  const warningLastname = document.createTextNode("Last Name cannot be empty");
-  const warningEmail = document.createTextNode("Looks like this is not an email");
-  const warningPassword = document.createTextNode("Password cannot be empty");
 
-  if (firstname.value === '' || firstname.value === null) {
-    node.appendChild(warningFirstname);
-    form.insertBefore(node, form.childNodes[8]);
+  // Error element
+  const errFirstname = errors[0];
+  const errLastname = errors[1];
+  const errEmail = errors[2];
+  const errPassword = errors[3];
+  
+  // Warning firstname
+  if (firstname.value === "" || firstname.value === null) {
+    firstname.style.border = "2px solid var(--red)";
+    firstname.style.marginBottom = "0.5rem";
+    firstname.placeholder = "";
+    errFirstname.innerHTML = "First Name cannot be empty";
+    dangerFirstname.style.visibility = "visible"
+  }
+
+  // Warning lastname
+  if (lastname.value === "" || lastname.value === null) {
+    lastname.style.border = "2px solid var(--red)";
+    lastname.style.marginBottom = "0.5rem";
+    lastname.placeholder = "";
+    errLastname.innerHTML = "Last Name cannot be empty";
+    dangerLastname.style.visibility = "visible"
+  }
+
+  // Warning email
+  if (validateEmail(email.value)) {
+    email.style.border = "2px solid var(--red)";
+    email.style.marginBottom = "0.5rem";
+    errEmail.innerHTML = "Looks like this is not an email";
+    email.style.color = "var(--red)";
+    dangerEmail.style.visibility = "visible"
+  }
+
+  // Warning Password
+  if (password.value === "" || password.value === null) {
+    password.style.border = "2px solid var(--red)";
+    password.style.marginBottom = "0.5rem";
+    password.placeholder = "";
+    errPassword.innerHTML = "Password cannot be empty";
+    dangerPassword.style.visibility = "visible"
   }
 
   e.preventDefault();
