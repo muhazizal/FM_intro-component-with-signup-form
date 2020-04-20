@@ -58,13 +58,13 @@ main #try {
   box-shadow: 0px 5px 0px 0px rgb(78, 69, 143);
 }
 
-section#try p {
+div#try p {
   width: 20rem;
   margin: 0 auto;
   font-weight: 300;
 }
 
-section#try p span {
+div#try p span {
   font-weight: 600;
 }
 
@@ -225,7 +225,7 @@ button[type=submit]:active {
     margin: 7.5rem 0 7.5rem auto;
   }
 
-  section#try p {
+  div#try p {
     width: 100%;
   }
 
@@ -269,7 +269,7 @@ button[type=submit]:active {
     margin: 0 2rem 2.5rem 0;
   }
 
-  section#try p {
+  div#try p {
     width: 100%;
   }
 
